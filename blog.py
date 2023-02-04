@@ -14,12 +14,7 @@ class RegisterForm(Form):
     ])
     confirm = PasswordField("Parola Doğrula")
 
-#Kayıt Olma
-@app.route("/register")
-def register():
-    return render_template("register.html")
-if __name__=="__main__":
-    app.run(debug=True)
+
     
 
 
@@ -49,6 +44,12 @@ def about():
 def detail(id):
     return "Article Id:" + id
 
+#Kayıt Olma
+@app.route("/register")
+def register():
+    return render_template("register.html")
+if __name__=="__main__":
+    app.run(debug=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
