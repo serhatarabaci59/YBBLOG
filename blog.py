@@ -45,9 +45,14 @@ def detail(id):
     return "Article Id:" + id
 
 #Kayıt Olma
-@app.route("/register")
+@app.route("/register",methods = ["GET","POST"])
 def register():
-    return render_template("register.html")
+    form = RegisterForm(request.form)
+
+    if request.method == "POST":
+        pass
+    else:
+        return render_template("register.html",form = form)
 if __name__=="__main__":
     app.run(debug=True)
 
